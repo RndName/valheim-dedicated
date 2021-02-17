@@ -1,0 +1,16 @@
+version: '3.2'
+services:
+  valheim:
+    image: rndname/valheim-dedicated
+    ports:
+      - 2456:2456/udp
+      - 2457:2457/udp
+      - 2458:2458/udp
+    environment:
+      - SERVER_NAME=Server
+      - WORLD_NAME=World
+      - SERVER_PASS=secret
+      - SERVER_PUBLIC=1
+      - SERVER_PORT=2456
+    volumes:
+      - ./valheim-config:/home/steam/.config/unity3d/IronGate/Valheim
