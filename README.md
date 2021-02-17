@@ -1,6 +1,8 @@
-Dockerized Valheim Dedicated Server. Based on https://hub.docker.com/r/cm2network/steamcmd
+# Dockerized Valheim Dedicated Server
+Custom Dockerfile and Docker-Compose for a dedicated valheim server based on the dockerized steamcmd: https://hub.docker.com/r/cm2network/steamcmd
 
 APP ID Server: 896660
+
 APP ID Valheim: 892970
 
 If you have an existing world on a Windows system you can copy it from e.g.
@@ -11,16 +13,21 @@ Valheim-Config is stored in:
 
 This folder is mounted to ./valheim-config
 
-# Build and run the server:
+Warning: SERVER_PASS must be at least 5 characters long. Otherwise valheim_server.x86_64 will refuse to start!
 
-# Adjust Server config
-# Upload own world
+## Build and run the server:
+
+```
+Adjust Server config
+Upload own world
 $ docker-compose pull
 $ docker-compose up -d
+```
 
-
-# Free unused space
+# Update Server
+```
+$ docker-compose pull
+$ docker-compose up -d
 $ docker image prune -f
+```
 
-
-Warning: SERVER_PASS must be at least 5 characters long. Otherwise valheim_server.x86_64 will refuse to start!
