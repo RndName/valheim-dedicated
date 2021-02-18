@@ -18,6 +18,8 @@ export LD_LIBRARY_PATH=$temp_ldpath
 
 echo "### Starting Valheim server ###"
 ./valheim_server.x86_64 \
+	-nographics \
+	-batchmode \
 	-name "${SERVER_NAME}" \
 	-port ${SERVER_PORT} \
 	-world "${WORLD_NAME}" \
